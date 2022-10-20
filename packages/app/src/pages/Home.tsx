@@ -21,7 +21,7 @@ import { useSearchParams, Link as RouterLink } from "react-router-dom";
 export const Home = () => {
   const { t } = useTranslation();
   const color = useColorModeValue("gray.800", "gray.700");
-  const backgroundColor = useColorModeValue("#FAFAFA", "#222222");
+  const backgroundColor = useColorModeValue("#F9DC5C", "#222222");
   let [searchParams] = useSearchParams();
 
   return (
