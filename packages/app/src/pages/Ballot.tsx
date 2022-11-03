@@ -460,7 +460,7 @@ export const Ballot = () => {
   const handleSubmit = async () => {
     console.log(isMaciPrivKey(maciKey));
     const signer = provider.getSigner(address);
-    const grantRoundAddress = "0x10E68ec87fBEF983943E83e727DcD52b1c9A762f";
+    const grantRoundAddress = "0xde79503673dc9f26e416cbc9c1f56a1424d167c6";
 
     const grantRound = new ethers.Contract(
       grantRoundAddress,
@@ -590,15 +590,12 @@ export const Ballot = () => {
       <Container style={{ marginTop: 64, maxWidth: 1042 }}>
         {isViewportMd ? (
           <Heading maxW={{ md: 595, base: 250 }}>
-            <img src={headerYourBallotLogo[currLang]} alt={t("YOUR BALLOT")} />
+            {t("YOUR BALLOT")}
           </Heading>
         ) : (
           <Flex w="full" alignItems="center" flexDirection="column">
             <Heading maxW={{ md: 595, base: 250 }}>
-              <img
-                src={headerYourBallotLogo[currLang]}
-                alt={t("YOUR BALLOT")}
-              />
+              {t("YOUR BALLOT")}
             </Heading>
             <MagikButton mt={6} maxWidth={{ md: 175 }} />
           </Flex>

@@ -110,7 +110,7 @@ export const Navbar = () => {
       
       <HStack px={2}>
 
-        <Select
+        {/* <Select
        
 
           value={selectedLang}
@@ -129,7 +129,7 @@ export const Navbar = () => {
           >
             TW
           </option>
-        </Select>
+        </Select> */}
 
         {/* <Button
               as={ExternalLink}
@@ -139,7 +139,7 @@ export const Navbar = () => {
               isExternal>
               Tickets!
             </Button> */}
-        <ColorModeSwitcher color="gray.500" aria-label="dark mode" />
+        {/* <ColorModeSwitcher color="gray.500" aria-label="dark mode" /> */}
       </HStack>
     </HStack>
   );
