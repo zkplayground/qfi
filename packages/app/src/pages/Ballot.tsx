@@ -590,15 +590,12 @@ export const Ballot = () => {
       <Container style={{ marginTop: 64, maxWidth: 1042 }}>
         {isViewportMd ? (
           <Heading maxW={{ md: 595, base: 250 }}>
-            <img src={headerYourBallotLogo[currLang]} alt={t("YOUR BALLOT")} />
+            {t("YOUR BALLOT")}
           </Heading>
         ) : (
           <Flex w="full" alignItems="center" flexDirection="column">
             <Heading maxW={{ md: 595, base: 250 }}>
-              <img
-                src={headerYourBallotLogo[currLang]}
-                alt={t("YOUR BALLOT")}
-              />
+              {t("YOUR BALLOT")}
             </Heading>
             <MagikButton mt={6} maxWidth={{ md: 175 }} />
           </Flex>
