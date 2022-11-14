@@ -107,9 +107,10 @@ export const Navbar = () => {
         }
         aria-label="Home"
       />
-
+      
       <HStack px={2}>
-        <Select
+
+        {/* <Select
        
 
           value={selectedLang}
@@ -128,27 +129,7 @@ export const Navbar = () => {
           >
             TW
           </option>
-          <option
-            value="en"
-            style={{
-              background: backgroundColor,
-              fontFamily: "Helvetica",
-              fontWeight: "bold",
-            }}
-          >
-            EN
-          </option>
-          <option
-            value="es"
-            style={{
-              background: backgroundColor,
-              fontFamily: "Helvetica",
-              fontWeight: "bold",
-            }}
-          >
-            ES
-          </option>
-        </Select>
+        </Select> */}
 
         {/* <Button
               as={ExternalLink}
@@ -158,7 +139,7 @@ export const Navbar = () => {
               isExternal>
               Tickets!
             </Button> */}
-        <ColorModeSwitcher color="gray.500" aria-label="dark mode" />
+        {/* <ColorModeSwitcher color="gray.500" aria-label="dark mode" /> */}
       </HStack>
     </HStack>
   );

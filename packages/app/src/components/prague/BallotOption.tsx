@@ -102,16 +102,24 @@ export const BallotOption = ({
         px={2}
       >
         <HStack alignItems="flex-start">
-          <Heading fontSize={{ base: "md", md: "xl" }} fontWeight={"black"}>
+          <Heading
+            as={Link}
+            to={`${to}?${searchParams.toString()}` ?? "/projects"}
+            textColor="InfoText"
+            fontSize={{ base: "md", md: "xl" }}
+            fontWeight={"bold"}
+          >
             {ballotOption?.projectName}
           </Heading>
 
           <Text
-            as={Link}
-            to={`${to}?${searchParams.toString()}` ?? "/projects"}
+            as="a"
+            href={ballotOption?.website}
+            target="_blank"
             fontFamily="arial"
             fontSize={{ base: "sm", md: "sm" }}
             fontWeight="thin"
+            color={'#acacac'}
             lineHeight="base"
             display={{ base: "none", md: "flex" }}
           >
