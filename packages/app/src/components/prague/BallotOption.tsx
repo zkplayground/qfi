@@ -102,7 +102,7 @@ export const BallotOption = ({
         px={2}
       >
         <HStack alignItems="flex-start">
-          <Heading fontSize={{ base: "md", md: "xl" }} fontWeight={"black"}>
+          <Heading fontSize={{ base: "md", md: "xl" }} fontWeight={"bold"}>
             {ballotOption?.projectName}
           </Heading>
 
@@ -112,6 +112,7 @@ export const BallotOption = ({
             fontFamily="arial"
             fontSize={{ base: "sm", md: "sm" }}
             fontWeight="thin"
+            color={'#acacac'}
             lineHeight="base"
             display={{ base: "none", md: "flex" }}
           >
