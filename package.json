@@ -37,6 +37,7 @@
     "release": "lerna version --conventional-commits",
     "canary": "lerna publish --canary --preid",
     "publish": "lerna publish",
+    "start:app": "yarn workspace @qfi/app start",
     "build": "yarn workspaces run build",
     "build:app": "yarn workspace @qfi/app build",
     "build:contracts": "yarn workspace @qfi/contracts run build",
