@@ -38,6 +38,7 @@
     "canary": "lerna publish --canary --preid",
     "publish": "lerna publish",
     "build": "yarn workspaces run build",
+    "build:app": "yarn workspace @qfi/app build",
     "build:contracts": "yarn workspace @qfi/contracts run build",
     "build:subgraph": "yarn workspace @qfi/subgraph run build",
     "build:hooks": "yarn workspace @qfi/hooks run build",
