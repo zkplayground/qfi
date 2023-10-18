@@ -1,0 +1,36 @@
+
+1.
+ - update ./packages/cli/src/lib/constants.ts
+ - update ./packages/cli/src/lib/data.ts
+ - note: add project type `github`, `video`
+
+
+
+
+
+
+---------------------------------------
+- network: goerli
+- timeline: 10/20 deadline + test done
+- publish: 11/7 start, about vote 7 days
+- deploy: own domain, server?
+
+## Questions:
+- front-end server 架在哪裡？
+Ans: Fleek.co
+
+- 專案建置流程
+Ans: 
+  1. cli: deploy contract
+  2. 
+
+
+
+
+
+
+
+## TODO:
+- DNS configuration 
+- 項目方資料的格式
+- 評審點數 200，一般使用者 99
