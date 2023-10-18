@@ -81,6 +81,7 @@ program
     signup(network, path)
   })
 
+// INFO: 一次做上方的指令: genkeys, initialize, deploy, add-recipients, signup
 program
   .command("dothething")
   .description("Does all the things without user input")
@@ -104,6 +105,8 @@ program
   .action((network: string) => {
     recover(network)
   })
+
+// INFO: Calculate the tally of the current vote offchain
 program
   .command("tally")
   .description("calculates the tally of the current vote offchain")

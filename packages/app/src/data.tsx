@@ -1,4 +1,17 @@
-let projects = [
+let projects: Array<{
+  projectName: string;
+  tagline: string;
+  description: string;
+  ethereumAddress: string;
+  website: string;
+  thumbnailImageLink: string;
+  logoCdnUrl: string;
+  bannerImageLink: string;
+  recipientId: number;
+  id: string;
+  video?: string;
+  github?: string;
+}> = [
   {
     projectName: "Zero-knowledge order book system (ZK-OBS)",
     tagline:

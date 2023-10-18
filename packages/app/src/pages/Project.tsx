@@ -326,7 +326,13 @@ export function Project() {
                   <b>{t("Project Ballot ID")}:</b> {project.id}
                 </Text>
                 <Text fontSize="sm" lineHeight="16px" fontWeight="400">
-                  <b>{t("Project Website")}:</b> {project.website}
+                  <b>{t("Project Github")}:</b> <a href="{project.github}">{project.github}</a>
+                </Text>
+                <Text fontSize="sm" lineHeight="16px" fontWeight="400">
+                  <b>{t("Project Website")}:</b> <a href="{project.website}">{project.website}</a>
+                </Text>
+                <Text fontSize="sm" lineHeight="16px" fontWeight="400">
+                  <b>{t("Project Video")}:</b> <a href="{project.video}">{project.video}</a>
                 </Text>
               </VStack>
             </VStack>
