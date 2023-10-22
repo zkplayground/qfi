@@ -460,7 +460,7 @@ export const Ballot = () => {
   const handleSubmit = async () => {
     console.log(isMaciPrivKey(maciKey));
     const signer = provider.getSigner(address);
-    const grantRoundAddress = "0x159C26c9de567c6DBB98bAB35D4F4A78402d6b63";
+    const grantRoundAddress = "0x71bd204c8d5d49103fc53df6c68033e54a05daa9";
 
     const grantRound = new ethers.Contract(
       grantRoundAddress,
@@ -498,7 +498,7 @@ export const Ballot = () => {
           ) {
             console.log("User is registered, signing ballot with private key");
             const coordinatorKey = PubKey.unserialize(
-              "macipk.ec4173e95d2bf03100f4c694d5c26ba6ab9817c0a5a0df593536a8ee2ec7af04"
+              "macipk.7fc8446bc7105defbdbd5eb95f132836a281e16a88711fff244f23e257d9a72b"
             );
 
             const [message, encPubKey] = createMessage(
