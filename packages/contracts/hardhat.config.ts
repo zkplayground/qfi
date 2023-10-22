@@ -110,7 +110,7 @@ const config: HardhatUserConfig = {
     externalArtifacts: ["precompiled/*.json"],
   },
   solidity: {
-    version: "0.8.1",
+    version: "0.8.7",
     settings: {
       optimizer: {
         enabled: true,
@@ -119,7 +119,7 @@ const config: HardhatUserConfig = {
     },
     overrides: {
       "contracts/GrantRound.sol": {
-        version: "0.8.1",
+        version: "0.8.7",
         settings: {
           optimizer: {
             enabled: true,
