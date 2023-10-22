@@ -66,6 +66,15 @@ async function tally(
   lastBlock: string
 ) {
   clear()
+  console.log({
+    network,
+    coordinatorPrivKey,
+    matchingPoolAmount,
+    qfiContractAddress,
+    startBlock,
+    firstVoteBlock,
+    lastBlock
+  })
 
   console.log(header)
   //  TODO: save to local file
@@ -111,7 +120,7 @@ async function tally(
     const grantRound = new ethers.Contract(currentGrantRound, GrantRound__factory.abi, deployer)
 
     const currentBlock = await provider.getBlockNumber()
-    const numBlocksPerRequest = 100
+    const numBlocksPerRequest = 2000
     /// //////////////////////////////////////////////////////////////////////////
     const spinner = customSpinner(`Read Smart Contracts`, "point")
     spinner.start()
@@ -126,7 +135,7 @@ async function tally(
     const duration = Number(dd[1])
     const BLOCKSPERDAY = 43200
     const firstBlock = parseInt(startBlock)
-    const firstVote = parseInt(firstVoteBlock)
+    const firstVote =  parseInt(firstVoteBlock);
     const lastBlockSignups = (4 / 24) * BLOCKSPERDAY + firstBlock
     const lastBlockVotes = lastBlock == "latest" ? currentBlock : parseInt(lastBlock)
     // (2 / (60 * 60 * 24) + 1) * 43200 + startBlock
@@ -229,14 +238,15 @@ async function tally(
       }
       // NOTE: Decode into actions, sort and save to local file (if not already present).
       grantRounds = grantRoundLogs
-        .map((log) => {
+        .map((log, ii) => {
           const event = qfiface.parseLog(log)
           return {
             type: "GrantRoundDeployed",
             blockNumber: log.blockNumber,
             transactionIndex: log.transactionIndex,
             voiceCreditFactor: Number(event.args._voiceCreditFactor),
-            coordinatorPubKey: new PubKey(event.args._coordinatorPubKey.map((x) => BigInt(x))).serialize()
+            coordinatorPubKey: new PubKey(event.args._coordinatorPubKey.map((x) => BigInt(x))).serialize(),
+            roundAddress: event.args._currentGrantRound,
           }
         })
         .sort((a, b) => {
@@ -255,10 +265,19 @@ async function tally(
     try {
       // NOTE: Get Vote Actions from GrantRound Smart Contracts
       let voteLogs = [] as any[]
-
-      for (let i = firstVote; i < lastBlockVotes; i += numBlocksPerRequest + 1) {
+      console.log({
+        message: 'Fetch Vote logs',
+        firstVote,
+        lastBlockVotes,
+      })
+      for (let i = 9912358; i <= currentBlock; i += numBlocksPerRequest + 1) {
         const fromBlock = i >= currentBlock ? currentBlock : i
         const toBlock = i + numBlocksPerRequest >= currentBlock ? currentBlock : i + numBlocksPerRequest
+        console.log({
+          message: 'Fetch Vote logs',
+          fromBlock,
+          toBlock,
+        })
         const logs = await provider.getLogs({
           ...grantRound.filters.PublishMessage(),
           fromBlock: fromBlock,
@@ -313,6 +332,7 @@ async function tally(
     console.log(`${logSymbols.success}Building MACI State locally: process grant rounds`)
 
     for (const grantRound of grantRounds) {
+      console.log(`\n ${grantRound.voiceCreditFactor}`)
       console.log(`\n ${grantRound.coordinatorPubKey}`)
       maciState.deployPoll(
         duration,
@@ -486,6 +506,7 @@ async function tally(
     console.log(tallyFileData)
 
     // TODO: calculate subsidy
+    console.log
     const squareOfTally: number[] = tallyResults.map((voteTotal) => parseInt(voteTotal) ** 2)
     console.log(squareOfTally)
     const sumOfSquareOfTally = squareOfTally.reduce((previousValue, currentValue) => previousValue + currentValue, 0)
@@ -506,7 +527,7 @@ async function tally(
         console.log(
           `\n${projectNameByStateId(index - 1)}@${projectAddressByStateId(index - 1)}: ${
             subsidyPercent * parseInt(matchingPoolAmount)
-          } USDC`
+          } USDC ( Tally=${perVOSpentTally[index]} , Votes=${tallyResults[index]})`
         )
         subsidyTotal += subsidyPercent * parseInt(matchingPoolAmount)
         return { address: projectAddressByStateId(index - 1), amount: subsidyPercent * parseInt(matchingPoolAmount) }

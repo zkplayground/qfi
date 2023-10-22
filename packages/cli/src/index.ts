@@ -44,14 +44,6 @@ program
   .addHelpCommand(`ethlatamcli genkeys 3000`)
 
 program
-  .command("initialize")
-  .description("Initialize the deployed MACI/QFI smart contracts")
-  .argument("<network>", "the network where the contracts has been deployed")
-  .action((network: string) => {
-    initialize(network)
-  })
-
-program
   .command("contracts:deploy")
   .description(
     "Deploy the smart contracts infrastructure necessary for running a new QFI/MACI instance for a specified network"
@@ -59,6 +51,15 @@ program
   .argument("<network>", "the network where the contracts will be deployed")
   .action((network: string) => {
     deploy(network)
+  })
+
+
+program
+  .command("initialize")
+  .description("Initialize the deployed MACI/QFI smart contracts")
+  .argument("<network>", "the network where the contracts has been deployed")
+  .action((network: string) => {
+    initialize(network)
   })
 
 program
@@ -107,6 +108,7 @@ program
   })
 
 // INFO: Calculate the tally of the current vote offchain
+// npm run tally --network goerli --coordinatorPrivkey "macisk.2c512a29f5ac0d8f6d706c83c4e6350835157fa9a1e73a3f095a4d12f3fd3df3" --matchingPoolAmount 1000 --qfiContractAddress 0xBF3d5526970D5B3474fFf6ac8879d15b99Cdb5EF --startBlock 9911912 --lastBlock "latest" --firstVoteBlock "9912358"
 program
   .command("tally")
   .description("calculates the tally of the current vote offchain")
@@ -116,18 +118,19 @@ program
   .argument("<qfiContractAddress>", "Block QFI contracts were deployed on")
   .argument("<startBlock>", "Block QFI contracts were deployed on")
   .argument("<firstVoteBlock>", "First block a vote was cast")
-  .argument("<lastblock>", "Last block to check for vote messages on, 'latest' for current block number")
+  .argument("<lastBlock>", "Last block to check for vote messages on, 'latest' for current block number")
   .action(
     (
       network: string,
       coordinatorPrivkey: string,
       matchingPoolAmount: string,
       qfiContractAddress: string,
-      startBlock: string,
+      startBlock: string, 
       firstVoteBlock:string,
       lastBlock: string
     ) => {
-      var optionalLastBlock = lastBlock == "latest" ? "latest" : lastBlock
+      var optionalLastBlock = lastBlock === "latest" ? "latest" : lastBlock
+      
       tally(network, coordinatorPrivkey, matchingPoolAmount, qfiContractAddress, startBlock, firstVoteBlock,  optionalLastBlock)
     }
   )

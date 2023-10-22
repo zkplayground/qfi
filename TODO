@@ -11,9 +11,18 @@
 
 ---------------------------------------
 - network: goerli
-- timeline: 10/20 deadline + test done
-- publish: 11/7 start, about vote 7 days
+- timeline: 10/25 ~ 11/10 , 10/24 add teams
+- MACI amount: 100
+- each Goerli: 0.05 ETH
+
+- publish: 10/25 start, about vote 14 days
+
+
 - deploy: own domain, server?
+
+## TODO:
+- Team informations
+- update tally script and re calculate fund.
 
 ## Questions:
 - front-end server 架在哪裡？
