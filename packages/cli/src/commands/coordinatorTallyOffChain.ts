@@ -527,7 +527,7 @@ async function tally(
         console.log(
           `\n${projectNameByStateId(index - 1)}@${projectAddressByStateId(index - 1)}: ${
             subsidyPercent * parseInt(matchingPoolAmount)
-          } USDC ( Tally=${perVOSpentTally[index]} , Votes=${tallyResults[index]})`
+          } USDC ( Tally=${perVOSpentTally[index]}, Pool=${0} , Votes=${tallyResults[index]})`
         )
         subsidyTotal += subsidyPercent * parseInt(matchingPoolAmount)
         return { address: projectAddressByStateId(index - 1), amount: subsidyPercent * parseInt(matchingPoolAmount) }
