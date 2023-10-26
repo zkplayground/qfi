@@ -27,7 +27,7 @@ let projects: Array<{
   "github": "https://github.com/hollow-leaf/tobi",
   "website": "https://hollowleaf.dev/tobi/",
   "ppt": "https://www.canva.com/design/DAFt1gArYSY/eq6izFmPIpX0uO_yKcKGXg/view",
-  "logoCdnUrl": "logoCdnUrl",
+  "logoCdnUrl": "/assets/1-logo.png",
   "thumbnailImageLink": "/assets/1-logo.png",
   "bannerImageLink": "/assets/2-banner.png",
   "video": "video"
@@ -43,7 +43,7 @@ let projects: Array<{
   "github": "https://github.com/gardennn/zkSeed",
   "website": "?",
   "ppt": "製作中...",
-  "logoCdnUrl": "logoCdnUrl",
+  "logoCdnUrl": "/assets/1-logo.png",
   "thumbnailImageLink": "/assets/1-logo.png",
   "bannerImageLink": "/assets/2-banner.png",
   "video": "video"
@@ -59,7 +59,7 @@ let projects: Array<{
   "github": "https://github.com/MingyuHeTKS/zk-democracy",
   "website": "?",
   "ppt": "?",
-  "logoCdnUrl": "logoCdnUrl",
+  "logoCdnUrl": "/assets/1-logo.png",
   "thumbnailImageLink": "/assets/1-logo.png",
 "bannerImageLink": "/assets/2-banner.png",
 "video": "video"
@@ -75,7 +75,7 @@ let projects: Array<{
   "github": "https://github.com/gn0uchat/whirl-auction",
   "website": "?",
   "ppt": "?",
-  "logoCdnUrl": "logoCdnUrl",
+  "logoCdnUrl": "/assets/1-logo.png",
   "thumbnailImageLink": "/assets/1-logo.png",
 "bannerImageLink": "/assets/2-banner.png",
 "video": "video"
@@ -91,7 +91,7 @@ let projects: Array<{
   "github": "https://github.com/t108590035/Zebra-s-Ketchup-Pasta-zkp-project.git",
   "website": "?",
   "ppt": "?",
-  "logoCdnUrl": "logoCdnUrl",
+  "logoCdnUrl": "/assets/1-logo.png",
   "thumbnailImageLink": "/assets/1-logo.png",
 "bannerImageLink": "/assets/2-banner.png",
 "video": "video"
@@ -107,7 +107,7 @@ let projects: Array<{
   "github": "https://github.com/MoonMathLover/demo-repository",
   "website": "?",
   "ppt": "?",
-  "logoCdnUrl": "logoCdnUrl",
+  "logoCdnUrl": "/assets/1-logo.png",
   "thumbnailImageLink": "/assets/1-logo.png",
 "bannerImageLink": "/assets/2-banner.png",
 "video": "video"
@@ -123,7 +123,7 @@ let projects: Array<{
   "github": "https://github.com/hugebing/SilentImpact",
   "website": "?",
   "ppt": "https://docs.google.com/presentation/d/1gbrneRkHYB4FrKoQoYs1V_kVp6MLFsUyMAcWmCN3-0w/edit?usp=sharing",
-  "logoCdnUrl": "logoCdnUrl",
+  "logoCdnUrl": "/assets/1-logo.png",
   "thumbnailImageLink": "/assets/1-logo.png",
 "bannerImageLink": "/assets/2-banner.png",
 "video": "video"
@@ -139,7 +139,7 @@ let projects: Array<{
   "github": "?",
   "website": "?",
   "ppt": "https://docs.google.com/presentation/d/1AIhcjp1mFcO4ruvL0GoY4evQup-1rg-5AAyjhjFXiWA/edit?usp=sharing",
-  "logoCdnUrl": "logoCdnUrl",
+  "logoCdnUrl": "/assets/1-logo.png",
   "thumbnailImageLink": "/assets/1-logo.png",
 "bannerImageLink": "/assets/2-banner.png",
 "video": "video"
