@@ -30,7 +30,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/1-logo.png",
   "thumbnailImageLink": "/assets/1-logo.png",
   "bannerImageLink": "/assets/1-banner.png",
-  "video": "video"
+  "video": ""
 }, {
   "recipientId": 2,
   "id": "2",
@@ -46,7 +46,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/2-logo.png",
   "thumbnailImageLink": "/assets/2-logo.png",
   "bannerImageLink": "/assets/2-banner.png",
-  "video": "video"
+  "video": ""
 }, {
   "recipientId": 3,
   "id": "3",
@@ -62,7 +62,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/3-logo.png",
   "thumbnailImageLink": "/assets/3-logo.png",
 "bannerImageLink": "/assets/3-banner.png",
-"video": "video"
+"video": ""
 }, {
   "recipientId": 4,
   "id": "4",
@@ -78,7 +78,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/4-logo.png",
   "thumbnailImageLink": "/assets/4-logo.png",
 "bannerImageLink": "/assets/4-banner.png",
-"video": "video"
+"video": ""
 }, {
   "recipientId": 5,
   "id": "5",
@@ -94,7 +94,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/5-logo.png",
   "thumbnailImageLink": "/assets/5-logo.png",
 "bannerImageLink": "/assets/5-banner.png",
-"video": "video"
+"video": ""
 }, {
   "recipientId": 6,
   "id": "6",
@@ -110,7 +110,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/6-logo.png",
   "thumbnailImageLink": "/assets/6-logo.png",
 "bannerImageLink": "/assets/6-banner.png",
-"video": "video"
+"video": ""
 }, {
   "recipientId": 7,
   "id": "7",
@@ -126,7 +126,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/7-logo.png",
   "thumbnailImageLink": "/assets/7-logo.png",
 "bannerImageLink": "/assets/7-banner.png",
-"video": "video"
+"video": ""
 }, {
   "recipientId": 8,
   "id": "8",
@@ -142,7 +142,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/8-logo.png",
   "thumbnailImageLink": "/assets/8-logo.png",
 "bannerImageLink": "/assets/8-banner.png",
-"video": "video"
+"video": ""
 }
 ];
 

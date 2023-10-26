@@ -326,13 +326,13 @@ export function Project() {
                   <b>{t("Project Ballot ID")}:</b> {project.id}
                 </Text>
                 <Text fontSize="sm" lineHeight="16px" fontWeight="400">
-                  <b>{t("Project Github")}:</b> <a style={{color: 'blue'}} href="{project.github}">{project.github}</a>
+                  <b>{t("Project Github")}:</b> {project.github ? <a style={{color: 'blue'}} href={project.github}>{project.github}</a> : <></>}
                 </Text>
                 <Text fontSize="sm" lineHeight="16px" fontWeight="400">
-                  <b>{t("Project Website")}:</b> <a style={{color: 'blue'}} href="{project.website}">{project.website}</a>
+                  <b>{t("Project Website")}:</b> {project.website ? <a style={{color: 'blue'}} href={project.website}>{project.website}</a> : <></>}
                 </Text>
                 <Text fontSize="sm" lineHeight="16px" fontWeight="400">
-                  <b>{t("Project Video")}:</b> <a style={{color: 'blue'}} href="{project.video}">{project.video}</a>
+                  <b>{t("Project Video")}:</b> {project.video ? <a style={{color: 'blue'}} href={project.video}>{project.video}</a> : <></>}
                 </Text>
               </VStack>
             </VStack>
