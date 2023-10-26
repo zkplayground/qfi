@@ -155,7 +155,7 @@ export const jsonRecipientsRecords: Recipient[] = [
     // "ppt": "https://www.canva.com/design/DAFt1gArYSY/eq6izFmPIpX0uO_yKcKGXg/view",
     "logoCdnUrl": "/assets/1-logo.png",
     "thumbnailImageLink": "/assets/1-logo.png",
-    "bannerImageLink": "/assets/2-banner.png",
+    "bannerImageLink": "/assets/1-banner.png",
     // "video": "video"
   }, {
     // "recipientId": 2,
@@ -169,8 +169,8 @@ export const jsonRecipientsRecords: Recipient[] = [
     // "github": "https://github.com/gardennn/zkSeed",
     "website": "",
     // "ppt": "製作中...",
-    "logoCdnUrl": "/assets/1-logo.png",
-    "thumbnailImageLink": "/assets/1-logo.png",
+    "logoCdnUrl": "/assets/2-logo.png",
+    "thumbnailImageLink": "/assets/2-logo.png",
     "bannerImageLink": "/assets/2-banner.png",
     // "video": "video"
   }, {
@@ -185,9 +185,9 @@ export const jsonRecipientsRecords: Recipient[] = [
     // "github": "https://github.com/MingyuHeTKS/zk-democracy",
     "website": "",
     // "ppt": "",
-    "logoCdnUrl": "/assets/1-logo.png",
-    "thumbnailImageLink": "/assets/1-logo.png",
-  "bannerImageLink": "/assets/2-banner.png",
+    "logoCdnUrl": "/assets/3-logo.png",
+    "thumbnailImageLink": "/assets/3-logo.png",
+  "bannerImageLink": "/assets/3-banner.png",
   // "video": "video"
   }, {
     // "recipientId": 4,
@@ -201,9 +201,9 @@ export const jsonRecipientsRecords: Recipient[] = [
     // "github": "https://github.com/gn0uchat/whirl-auction",
     "website": "",
     // "ppt": "",
-    "logoCdnUrl": "/assets/1-logo.png",
-    "thumbnailImageLink": "/assets/1-logo.png",
-  "bannerImageLink": "/assets/2-banner.png",
+    "logoCdnUrl": "/assets/4-logo.png",
+    "thumbnailImageLink": "/assets/4-logo.png",
+  "bannerImageLink": "/assets/4-banner.png",
   // "video": "video"
   }, {
     // "recipientId": 5,
@@ -217,9 +217,9 @@ export const jsonRecipientsRecords: Recipient[] = [
     // "github": "https://github.com/t108590035/Zebra-s-Ketchup-Pasta-zkp-project.git",
     "website": "",
     // "ppt": "",
-    "logoCdnUrl": "/assets/1-logo.png",
-    "thumbnailImageLink": "/assets/1-logo.png",
-  "bannerImageLink": "/assets/2-banner.png",
+    "logoCdnUrl": "/assets/5-logo.png",
+    "thumbnailImageLink": "/assets/5-logo.png",
+  "bannerImageLink": "/assets/5-banner.png",
   // "video": "video"
   }, {
     // "recipientId": 6,
@@ -233,9 +233,9 @@ export const jsonRecipientsRecords: Recipient[] = [
     // "github": "https://github.com/MoonMathLover/demo-repository",
     "website": "",
     // "ppt": "",
-    "logoCdnUrl": "/assets/1-logo.png",
-    "thumbnailImageLink": "/assets/1-logo.png",
-  "bannerImageLink": "/assets/2-banner.png",
+    "logoCdnUrl": "/assets/6-logo.png",
+    "thumbnailImageLink": "/assets/6-logo.png",
+  "bannerImageLink": "/assets/6-banner.png",
   // "video": "video"
   }, {
     // "recipientId": 7,
@@ -249,9 +249,9 @@ export const jsonRecipientsRecords: Recipient[] = [
     // "github": "https://github.com/hugebing/SilentImpact",
     "website": "",
     // "ppt": "https://docs.google.com/presentation/d/1gbrneRkHYB4FrKoQoYs1V_kVp6MLFsUyMAcWmCN3-0w/edit?usp=sharing",
-    "logoCdnUrl": "/assets/1-logo.png",
-    "thumbnailImageLink": "/assets/1-logo.png",
-  "bannerImageLink": "/assets/2-banner.png",
+    "logoCdnUrl": "/assets/7-logo.png",
+    "thumbnailImageLink": "/assets/7-logo.png",
+  "bannerImageLink": "/assets/7-banner.png",
   // "video": "video"
   }, {
     // "recipientId": 8,
@@ -265,9 +265,9 @@ export const jsonRecipientsRecords: Recipient[] = [
     // "github": "",
     "website": "",
     // "ppt": "https://docs.google.com/presentation/d/1AIhcjp1mFcO4ruvL0GoY4evQup-1rg-5AAyjhjFXiWA/edit?usp=sharing",
-    "logoCdnUrl": "/assets/1-logo.png",
-    "thumbnailImageLink": "/assets/1-logo.png",
-  "bannerImageLink": "/assets/2-banner.png",
+    "logoCdnUrl": "/assets/8-logo.png",
+    "thumbnailImageLink": "/assets/8-logo.png",
+  "bannerImageLink": "/assets/8-banner.png",
   // "video": "video"
   }
 ]
