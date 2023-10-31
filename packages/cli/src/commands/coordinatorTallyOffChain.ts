@@ -521,14 +521,32 @@ async function tally(
 
     console.log(`\n Calculating QF subsidy results`)
     let subsidyTotal = 0
+
+    const totalVotes = tallyResults.reduce((previousValue, currentValue) => previousValue + parseInt(currentValue), 0)
+
+    console.log({
+      totalVotes,
+      message: `totalVotes=${totalVotes}`,
+    });
     squareOfTally.map((squareOfTally, index) => {
       if (squareOfTally > 0) {
         const subsidyPercent = squareOfTally / sumOfSquareOfTally
+
+        const votesPercent = parseInt(tallyResults[index]) / totalVotes;
+
+        // NOTE: DISPLAY RESULTS
+        // console.log(
+        //   `\n${projectNameByStateId(index - 1)}@${projectAddressByStateId(index - 1)}: ${
+        //     subsidyPercent * parseInt(matchingPoolAmount)
+        //   } USDC ( Tally=${perVOSpentTally[index]}, Pool=${0} , Votes=${tallyResults[index]})`
+        // )
+
         console.log(
           `\n${projectNameByStateId(index - 1)}@${projectAddressByStateId(index - 1)}: ${
-            subsidyPercent * parseInt(matchingPoolAmount)
-          } USDC ( Tally=${perVOSpentTally[index]}, Pool=${0} , Votes=${tallyResults[index]})`
+            Math.round(votesPercent * parseInt(matchingPoolAmount) * 1000) / 1000
+          } USDC ( Tally=${perVOSpentTally[index]} , Votes=${tallyResults[index]})`
         )
+
         subsidyTotal += subsidyPercent * parseInt(matchingPoolAmount)
         return { address: projectAddressByStateId(index - 1), amount: subsidyPercent * parseInt(matchingPoolAmount) }
       }

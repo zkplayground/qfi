@@ -27,12 +27,13 @@
  - $cli: npm run build
  - $cli: npm run dothething --network goerli
 
-5. 
+6. 
   update packages/app/src/pages/Ballot.tsx
   change: `grantRoundAddress`
   change: `coordinatorKey`
 
-
+7. calculate all votes 
+ - $cli: npm run tally --network goerli --coordinatorPrivkey "macisk.2c512a29f5ac0d8f6d706c83c4e6350835157fa9a1e73a3f095a4d12f3fd3df3" --matchingPoolAmount 2000 --qfiContractAddress 0x264477f29fE1aC1704890E26b05dfdF077B2f304 --startBlock 9963086 --firstVoteBlock 9963193 --lastBlock latest
 
 
 ---------------------------------------
