@@ -386,9 +386,14 @@ async function doTheThing(network: string) {
     await grantRoundTx.wait()
 
     console.log(`\n${logSymbols.success} You have successfully initialized the deployed MACI/QFI smart contracts 🎊\n`)
+    console.log({
+      grantRoundTx,
+    })
     console.log(
-      `\n${logSymbols.success} you grant round will be active once this transaction is confirmed ${grantRoundTx} n`
+      `\n${logSymbols.success} you grant round will be active once this transaction is confirmed ${grantRoundTx.transactionHash} n`
     )
+
+    // TODO: show round grantRoundAddress
   } catch (err: any) {
     console.log(err)
     if (!err.transactionHash) console.log(`\n${logSymbols.error} Something went wrong: ${err}`)

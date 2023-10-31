@@ -460,7 +460,7 @@ export const Ballot = () => {
   const handleSubmit = async () => {
     console.log(isMaciPrivKey(maciKey));
     const signer = provider.getSigner(address);
-    const grantRoundAddress = "0x71bd204c8d5d49103fc53df6c68033e54a05daa9";
+    const grantRoundAddress = "0xd9e7dEC731B4DfB6A922546048177ec18d8aeca9";
 
     const grantRound = new ethers.Contract(
       grantRoundAddress,
