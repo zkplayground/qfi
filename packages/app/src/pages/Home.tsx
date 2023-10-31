@@ -124,7 +124,7 @@ export const Home = () => {
 
                   <AccordionPanel pb={4}>
                     <Text fontSize="sm" py={2}>
-                    為您喜歡的 ZKPlayground 提案投票，使他們有資格從贊助者的集合資金池中取得資金並繼續發展，另外一方面提案方也可以由社群票數了解到提案的市場性。每個專案獲得多少資金將由 ZKPlayground Stage1 的參與者在活動期間投票決定。
+                    為您喜歡的 ZKPlayground 提案投票，使他們有資格從贊助者的集合資金池中取得資金並繼續發展，另外一方面提案方也可以由社群票數了解到提案的市場性。每個專案獲得多少資金將由 ZKPlayground 的參與者在活動期間投票決定。
                     </Text>
 
                     <Text fontSize="sm" py={2}>
