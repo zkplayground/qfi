@@ -34,22 +34,6 @@ let projects: Array<{
 }, {
   "recipientId": 2,
   "id": "2",
-  "email": "garden.shyu@gmail.com",
-  "teamName": "Maverick",
-  "projectName": "zkSeed",
-  "ethereumAddress": "0x0C2f124b968B537AA15d852094008Bf8491e284c",
-  "description": "隊如其名，獨行俠。",
-  "tagline": "zkSeed 是一個創新匿名募資平台，旨在為資金籌集活動提供更多隱私、安全及透明度。我們整合了 ZK 技術和區塊鏈技術，為資金籌集活動引入了新的保密和可靠性標準。平台主要目標是為個人贊助者和初創項目提供安全、私密的募資解決方案。個人贊助者可以隱匿身份，確保其捐款細節得以保密。初創企業可以安全地籌集資金，並透過平台項向匿名贊助者提供分潤。所有過程透過 ZK 技術以確保所有交易都得到隱私保護，同時保持透明度及可驗證性。",
-  "github": "https://github.com/gardennn/zkSeed",
-  "website": "",
-  "ppt": "製作中...",
-  "logoCdnUrl": "/assets/2-logo.png",
-  "thumbnailImageLink": "/assets/2-logo.png",
-  "bannerImageLink": "/assets/2-banner.png",
-  "video": ""
-}, {
-  "recipientId": 3,
-  "id": "3",
   "email": "mingyuhe22@gmail.com",
   "teamName": "CCLab",
   "projectName": "ZK Democracy",
@@ -64,8 +48,8 @@ let projects: Array<{
 "bannerImageLink": "/assets/3-banner.png",
 "video": ""
 }, {
-  "recipientId": 4,
-  "id": "4",
+  "recipientId": 3,
+  "id": "3",
   "email": "wsp151515@gmail.com",
   "teamName": "zkblk",
   "projectName": "whirl-auction",
@@ -80,8 +64,8 @@ let projects: Array<{
 "bannerImageLink": "/assets/4-banner.png",
 "video": ""
 }, {
-  "recipientId": 5,
-  "id": "5",
+  "recipientId": 4,
+  "id": "4",
   "email": "t108590035@ntut.org.tw",
   "teamName": "Zebra’s Ketchup Pasta",
   "projectName": "老師不管，男模會館",
@@ -96,8 +80,8 @@ let projects: Array<{
 "bannerImageLink": "/assets/5-banner.png",
 "video": ""
 }, {
-  "recipientId": 6,
-  "id": "6",
+  "recipientId": 5,
+  "id": "5",
   "email": "alex640702070829@gmail.com",
   "teamName": "MoonMathLovers",
   "projectName": "Transparent LootBox Revolution",
@@ -112,8 +96,8 @@ let projects: Array<{
 "bannerImageLink": "/assets/6-banner.png",
 "video": ""
 }, {
-  "recipientId": 7,
-  "id": "7",
+  "recipientId": 6,
+  "id": "6",
   "email": "jbjyuan@gmail.com",
   "teamName": "我擔心組員沒填表單",
   "projectName": "SilentImpact",
@@ -128,8 +112,8 @@ let projects: Array<{
 "bannerImageLink": "/assets/7-banner.png",
 "video": ""
 }, {
-  "recipientId": 8,
-  "id": "8",
+  "recipientId": 7,
+  "id": "7",
   "email": "kbjkuo@gmail.com",
   "teamName": "啊ㄟ姆 減啊ㄟ斧 斜線",
   "projectName": "SANBAO - Street Alert Network: Blockchain Assisted Oracle",
@@ -143,7 +127,24 @@ let projects: Array<{
   "thumbnailImageLink": "/assets/8-logo.png",
 "bannerImageLink": "/assets/8-banner.png",
 "video": ""
-}
+},
+// {
+//   "recipientId": ?,
+//   "id": "?",
+//   "email": "garden.shyu@gmail.com",
+//   "teamName": "Maverick",
+//   "projectName": "zkSeed",
+//   "ethereumAddress": "0x0C2f124b968B537AA15d852094008Bf8491e284c",
+//   "description": "隊如其名，獨行俠。",
+//   "tagline": "zkSeed 是一個創新匿名募資平台，旨在為資金籌集活動提供更多隱私、安全及透明度。我們整合了 ZK 技術和區塊鏈技術，為資金籌集活動引入了新的保密和可靠性標準。平台主要目標是為個人贊助者和初創項目提供安全、私密的募資解決方案。個人贊助者可以隱匿身份，確保其捐款細節得以保密。初創企業可以安全地籌集資金，並透過平台項向匿名贊助者提供分潤。所有過程透過 ZK 技術以確保所有交易都得到隱私保護，同時保持透明度及可驗證性。",
+//   "github": "https://github.com/gardennn/zkSeed",
+//   "website": "",
+//   "ppt": "製作中...",
+//   "logoCdnUrl": "/assets/2-logo.png",
+//   "thumbnailImageLink": "/assets/2-logo.png",
+//   "bannerImageLink": "/assets/2-banner.png",
+//   "video": ""
+// }, 
 ];
 
 export function getProjects() {

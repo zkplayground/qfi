@@ -1,7 +1,7 @@
 
 1. teams list
  - update ./packages/cli/src/lib/constants.ts
- - update ./packages/cli/src/lib/data.ts
+ - update ./packages/app/src/data.ts
  - note: add project type `github`, `video`
  
 2.
