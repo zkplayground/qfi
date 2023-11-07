@@ -1,4 +1,5 @@
 let projects: Array<{
+  disabled?: boolean;
   projectName: string;
   tagline: string;
   description: string;
@@ -112,6 +113,7 @@ let projects: Array<{
 "bannerImageLink": "/assets/7-banner.png",
 "video": ""
 }, {
+  disabled: true,
   "recipientId": 7,
   "id": "7",
   "email": "kbjkuo@gmail.com",
@@ -148,19 +150,19 @@ let projects: Array<{
 ];
 
 export function getProjects() {
-  return projects;
+  return projects.filter((p) => !p.disabled);
 }
 
 export function getRecipientIdbyId(id) {
   console.log(id);
-  const p = projects.find((p) => p.id === id);
+  const p = getProjects().find((p) => p.id === id);
 
   return p.recipientId;
 }
 
 export function getProject(id: string) {
   return (
-    projects.find((p) => p.id === id) ?? {
+    getProjects().find((p) => p.id === id) ?? {
       projectName: "404 Project not found",
       tagline: "404 Tagline not found",
       description: "404 Description not found",
