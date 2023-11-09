@@ -31,7 +31,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/1-logo.png",
   "thumbnailImageLink": "/assets/1-logo.png",
   "bannerImageLink": "/assets/1-banner.png",
-  "video": ""
+  "video": "https://youtu.be/8AZRagy8k9g"
 }, {
   "recipientId": 2,
   "id": "2",
@@ -47,7 +47,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/3-logo.png",
   "thumbnailImageLink": "/assets/3-logo.png",
 "bannerImageLink": "/assets/3-banner.png",
-"video": ""
+"video": "https://youtu.be/0Qv_-6r7nDM"
 }, {
   "recipientId": 3,
   "id": "3",
@@ -63,7 +63,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/4-logo.png",
   "thumbnailImageLink": "/assets/4-logo.png",
 "bannerImageLink": "/assets/4-banner.png",
-"video": ""
+"video": "https://youtu.be/mok0TTbH448"
 }, {
   "recipientId": 4,
   "id": "4",
@@ -79,7 +79,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/5-logo.png",
   "thumbnailImageLink": "/assets/5-logo.png",
 "bannerImageLink": "/assets/5-banner.png",
-"video": ""
+"video": "https://youtu.be/XCHv0H3Qvjk"
 }, {
   "recipientId": 5,
   "id": "5",
@@ -95,7 +95,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/6-logo.png",
   "thumbnailImageLink": "/assets/6-logo.png",
 "bannerImageLink": "/assets/6-banner.png",
-"video": ""
+"video": "https://youtu.be/gX_u7Phva5A"
 }, {
   "recipientId": 6,
   "id": "6",
@@ -111,7 +111,7 @@ let projects: Array<{
   "logoCdnUrl": "/assets/7-logo.png",
   "thumbnailImageLink": "/assets/7-logo.png",
 "bannerImageLink": "/assets/7-banner.png",
-"video": ""
+"video": "https://youtu.be/WpsjFVNJ7TQ"
 }, {
   disabled: true,
   "recipientId": 7,
