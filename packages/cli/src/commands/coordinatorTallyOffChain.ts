@@ -1,8 +1,9 @@
-#!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable radix */
 /* eslint-disable no-console */
 
+import fs from 'fs';
+import path from 'path';
 import logSymbols from "log-symbols"
 import { clear } from "console"
 import chalk from "chalk"
@@ -77,6 +78,7 @@ async function tally(
   })
 
   console.log(header)
+  const startTime = new Date();
   //  TODO: save to local file
   // Save to local file.
   const maciBasePath = `${outputDirPath}/maci`
@@ -505,6 +507,11 @@ async function tally(
     console.log("/=========FINAL TALLY RESULTS==========/")
     console.log(tallyFileData)
 
+    // const outputfile = path.resolve(outputDirPath, `tally-${startTime.toISOString().split('.')[0]}.json`)
+    // console.log(`Saving Tally Results to ${outputfile}`);
+    // await writeLocalJsonFile(outputfile, JSON.parse(JSON.stringify(tallyFileData, null, 2)))
+
+
     // TODO: calculate subsidy
     console.log
     const squareOfTally: number[] = tallyResults.map((voteTotal) => parseInt(voteTotal) ** 2)
@@ -516,8 +523,8 @@ async function tally(
     )
 
     // TODO: replace with subgraph
-    const projectNameByStateId = (index) => jsonRecipientsRecords[index].projectName
-    const projectAddressByStateId = (index) => jsonRecipientsRecords[index].ethereumAddress
+    const projectNameByStateId = (index) => jsonRecipientsRecords[index]?.projectName
+    const projectAddressByStateId = (index) => jsonRecipientsRecords[index]?.ethereumAddress
 
     console.log(`\n Calculating QF subsidy results`)
     let subsidyTotal = 0
@@ -528,35 +535,53 @@ async function tally(
       totalVotes,
       message: `totalVotes=${totalVotes}`,
     });
-    squareOfTally.map((squareOfTally, index) => {
+    const voteResult = squareOfTally.map((squareOfTally, index) => {
+      const decimals = 18;
+      const projectName = projectNameByStateId(index - 1);
+      const projectAddress = projectAddressByStateId(index - 1);
+      const votes = Number(tallyResults[index]);
+      const tally = Number(perVOSpentTally[index]);
+      // const votesPercent = parseInt(tallyResults[index]) / totalVotes;
+      const rawAmount = BigNumber.from((BigInt(matchingPoolAmount) * BigInt(10**decimals)) * BigInt(votes) / BigInt(totalVotes))
+      const reward = ethers.utils.formatUnits(rawAmount, decimals);
+      // Math.floor(votesPercent * parseInt(matchingPoolAmount) * 1000000) / 1000000; // DAI
+
       if (squareOfTally > 0) {
         const subsidyPercent = squareOfTally / sumOfSquareOfTally
-
-        const votesPercent = parseInt(tallyResults[index]) / totalVotes;
-
-        // NOTE: DISPLAY RESULTS
-        // console.log(
-        //   `\n${projectNameByStateId(index - 1)}@${projectAddressByStateId(index - 1)}: ${
-        //     subsidyPercent * parseInt(matchingPoolAmount)
-        //   } USDC ( Tally=${perVOSpentTally[index]}, Pool=${0} , Votes=${tallyResults[index]})`
-        // )
-
         console.log(
-          `\n${projectNameByStateId(index - 1)}@${projectAddressByStateId(index - 1)}: ${
-            Math.round(votesPercent * parseInt(matchingPoolAmount) * 1000) / 1000
-          } USDC ( Tally=${perVOSpentTally[index]} , Votes=${tallyResults[index]})`
+          `${projectName}@${projectAddress}: ${reward} DAI ( Tally=${tally} , Votes=${votes})`
         )
 
         subsidyTotal += subsidyPercent * parseInt(matchingPoolAmount)
-        return { address: projectAddressByStateId(index - 1), amount: subsidyPercent * parseInt(matchingPoolAmount) }
+        // return { address: projectAddressByStateId(index - 1), amount: subsidyPercent * parseInt(matchingPoolAmount) }
       }
-      return { address: "0x0000000000000000000000000000000000", amount: 0 }
-    })
+
+      return { 
+        projectName,
+        projectAddress,
+        reward,
+        tally,
+        votes,
+      }
+    }).filter((x) => !!x.projectName);
+
+    const totalReward = voteResult.reduce((previousValue, currentValue) => previousValue + Number(currentValue.reward), 0)
+    const totalTally = voteResult.reduce((previousValue, currentValue) => previousValue + currentValue.tally, 0)
+    const totalVotes2 = voteResult.reduce((previousValue, currentValue) => previousValue + currentValue.votes, 0)
+    if(totalVotes !== totalVotes2) throw new Error(`totalVotes=${totalVotes} !== totalVotes2=${totalVotes2}`);
+    voteResult.push({
+      totalReward,
+      totalTally,
+      totalVotes2,
+    } as any);
 
     console.log(chalk.bold(`\n Subsidy results calculated`))
     console.log(`Total: ${subsidyTotal}`)
 
     console.log("Tally Complete: Saving Result Logs")
+    await writeLocalJsonFile(`${outputDirPath}/jsonRecipientsRecords.json`, JSON.parse(JSON.stringify(jsonRecipientsRecords, null, 2)))
+    await writeLocalJsonFile(`${outputDirPath}/voteResult.json`, JSON.parse(JSON.stringify(voteResult, null, 2)))
+    await writeLocalJsonFile(`${outputDirPath}/squareOfTally.json`, JSON.parse(JSON.stringify(squareOfTally, null, 2)))
     await writeLocalJsonFile(signUpsFilePath, JSON.parse(JSON.stringify(signUps, null, 2)))
     await writeLocalJsonFile(grantRoundsFilePath, JSON.parse(JSON.stringify(grantRounds, null, 2)))
     await writeLocalJsonFile(votesFilePath, JSON.parse(JSON.stringify(votes, null, 2)))
