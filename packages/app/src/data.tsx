@@ -17,6 +17,7 @@ let projects: Array<{
   ppt?: string;
 }> = [
 {
+  disabled: true,
   "recipientId": 1,
   "id": "1",
   "email": "kidneyweak@gmail.com",
@@ -33,6 +34,7 @@ let projects: Array<{
   "bannerImageLink": "/assets/1-banner.png",
   "video": "https://youtu.be/8AZRagy8k9g"
 }, {
+  disabled: true,
   "recipientId": 2,
   "id": "2",
   "email": "mingyuhe22@gmail.com",
@@ -49,6 +51,7 @@ let projects: Array<{
 "bannerImageLink": "/assets/3-banner.png",
 "video": "https://youtu.be/0Qv_-6r7nDM"
 }, {
+  disabled: true,
   "recipientId": 3,
   "id": "3",
   "email": "wsp151515@gmail.com",
@@ -65,6 +68,7 @@ let projects: Array<{
 "bannerImageLink": "/assets/4-banner.png",
 "video": "https://youtu.be/mok0TTbH448"
 }, {
+  disabled: true,
   "recipientId": 4,
   "id": "4",
   "email": "t108590035@ntut.org.tw",
@@ -81,6 +85,7 @@ let projects: Array<{
 "bannerImageLink": "/assets/5-banner.png",
 "video": "https://youtu.be/XCHv0H3Qvjk"
 }, {
+  disabled: true,
   "recipientId": 5,
   "id": "5",
   "email": "alex640702070829@gmail.com",
@@ -97,6 +102,7 @@ let projects: Array<{
 "bannerImageLink": "/assets/6-banner.png",
 "video": "https://youtu.be/gX_u7Phva5A"
 }, {
+  disabled: true,
   "recipientId": 6,
   "id": "6",
   "email": "jbjyuan@gmail.com",
