@@ -272,7 +272,7 @@ async function tally(
         firstVote,
         lastBlockVotes,
       })
-      for (let i = 9912358; i <= currentBlock; i += numBlocksPerRequest + 1) {
+      for (let i = Number(startBlock); i <= currentBlock; i += numBlocksPerRequest + 1) {
         const fromBlock = i >= currentBlock ? currentBlock : i
         const toBlock = i + numBlocksPerRequest >= currentBlock ? currentBlock : i + numBlocksPerRequest
         console.log({
@@ -527,7 +527,6 @@ async function tally(
     const projectAddressByStateId = (index) => jsonRecipientsRecords[index]?.ethereumAddress
 
     console.log(`\n Calculating QF subsidy results`)
-    let subsidyTotal = 0
 
     const totalVotes = tallyResults.reduce((previousValue, currentValue) => previousValue + parseInt(currentValue), 0)
 
@@ -535,24 +534,33 @@ async function tally(
       totalVotes,
       message: `totalVotes=${totalVotes}`,
     });
+    let subsidyTotal = 0
     const voteResult = squareOfTally.map((squareOfTally, index) => {
-      const decimals = 18;
+      const decimals = 18n;
+      // const floorDecimals = 3n;
+      // if(decimals - floorDecimals < 0) throw new Error(`decimals - modDecimals < 0`);
+      const base = BigInt(10) ** BigInt(decimals);
+      // const floorBase = BigInt(10) ** BigInt(decimals - floorDecimals);
       const projectName = projectNameByStateId(index - 1);
       const projectAddress = projectAddressByStateId(index - 1);
       const votes = Number(tallyResults[index]);
       const tally = Number(perVOSpentTally[index]);
       // const votesPercent = parseInt(tallyResults[index]) / totalVotes;
-      const rawAmount = BigNumber.from((BigInt(matchingPoolAmount) * BigInt(10**decimals)) * BigInt(votes) / BigInt(totalVotes))
+      const rawAmount = BigNumber.from((BigInt(matchingPoolAmount) * base) * BigInt(votes) / BigInt(totalVotes))
+                                // .div(floorBase).mul(floorBase);
       const reward = ethers.utils.formatUnits(rawAmount, decimals);
       // Math.floor(votesPercent * parseInt(matchingPoolAmount) * 1000000) / 1000000; // DAI
-
+      const votesPercent = Math.round(votes * 10000 / totalVotes) / 100;
+      
+      
       if (squareOfTally > 0) {
-        const subsidyPercent = squareOfTally / sumOfSquareOfTally
+        // const subsidyPercent = squareOfTally / sumOfSquareOfTally;
+        
         console.log(
-          `${projectName}@${projectAddress}: ${reward} DAI ( Tally=${tally} , Votes=${votes})`
+          `${projectName}@${projectAddress}:\t${reward} DAI\t(Tally=${tally} , Votes=${votes}), PercentOfVotes=${votesPercent}`
         )
-
-        subsidyTotal += subsidyPercent * parseInt(matchingPoolAmount)
+        subsidyTotal += Number(reward);
+        // subsidyTotal += subsidyPercent * parseInt(matchingPoolAmount)
         // return { address: projectAddressByStateId(index - 1), amount: subsidyPercent * parseInt(matchingPoolAmount) }
       }
 
@@ -562,6 +570,7 @@ async function tally(
         reward,
         tally,
         votes,
+        votesPercent,
       }
     }).filter((x) => !!x.projectName);
 
@@ -569,10 +578,13 @@ async function tally(
     const totalTally = voteResult.reduce((previousValue, currentValue) => previousValue + currentValue.tally, 0)
     const totalVotes2 = voteResult.reduce((previousValue, currentValue) => previousValue + currentValue.votes, 0)
     if(totalVotes !== totalVotes2) throw new Error(`totalVotes=${totalVotes} !== totalVotes2=${totalVotes2}`);
+    const voterNum = new Set(votes.map(item => item.encPubKey)).size;
+
     voteResult.push({
       totalReward,
       totalTally,
-      totalVotes2,
+      totalVotes: totalVotes2,
+      voterNum,
     } as any);
 
     console.log(chalk.bold(`\n Subsidy results calculated`))
